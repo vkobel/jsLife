@@ -164,7 +164,7 @@
 
   $(function() {
     var game, grid;
-    grid = new Grid("screen", 2, 2);
+    grid = new Grid("screen", 3, 3);
     grid.live(5, 5);
     grid.live(5, 6);
     grid.live(5, 7);
@@ -174,7 +174,7 @@
     grid.live(95, 98);
     grid.live(96, 98);
     grid.live(97, 98);
-    game = new GameLoop(5000, grid);
+    game = new GameLoop(40, grid);
     return game.start();
   });
 
