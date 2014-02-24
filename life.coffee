@@ -33,10 +33,6 @@ class Grid extends Canvas
     super x * @sizeX, y * @sizeY, @sizeX, @sizeY, color ? "#111"
 
   buildPotentialStateChanging: () ->
-
-    # for k of @potentialStateChanging
-    #   [px, py] = @coordsFromKey k
-    #   @draw px, py, "#F00"
     
     @potentialStateChanging = {}
 
@@ -57,19 +53,6 @@ class Grid extends Canvas
   die: (x, y) ->
     @draw x, y, "#111"
     delete @activeCells[@keyFromCoords x, y]
-
-    # # decrease the weight of all 9 cells around (and itself) by 1
-    # # delete it if 0
-    # for [ax, ay] in @getAdjacentCoords([x, y], true)
-
-    #   key = @keyFromCoords ax, ay
-
-    #   weight = --@potentialStateChanging[key]
-
-    #   if weight <= 0
-    #     @draw ax, ay, "#F00"
-    #     delete @potentialStateChanging[key]
-    #     @counter--
 
   isAlive: (matrix, key) ->
     matrix[key]?
